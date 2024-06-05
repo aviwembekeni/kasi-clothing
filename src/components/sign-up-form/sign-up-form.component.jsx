@@ -5,6 +5,11 @@ import {
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils.js";
 
+import "./sign-up-form.styles.scss";
+
+import FormInput from "../form-input/form-input.component.jsx";
+import Button from "../button/button.component.jsx";
+
 const defaultFormFields = {
   displayName: "",
   email: "",
@@ -52,45 +57,42 @@ const SignUpForm = () => {
 
   return (
     <div className="sign-up-container">
-      <h1>I do not have an account</h1>
+      <h2>I do not have an account</h2>
+      <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
-        <label>Display Name</label>
-        <input
+        <FormInput
+          label="Display Name"
           type="text"
           name="displayName"
-          placeholder="Name"
           value={displayName}
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
           required
         />
-        <label> Email</label>
-        <input
+        <FormInput
+          label="Email"
           type="email"
           name="email"
-          placeholder="Email"
           value={email}
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
           required
         />
-        <label>Password</label>
-        <input
+        <FormInput
+          label="Password"
           type="password"
           name="password"
-          placeholder="Password"
           value={password}
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
           required
         />
-        <label>Confirm Password</label>
-        <input
+        <FormInput
+          label="Confirm Password"
           type="password"
           name="confirmPassword"
-          placeholder="Confirm Password"
           value={confirmPassword}
-          onChange={(e) => handleChange(e)}
+          onChange={handleChange}
           required
         />
-        <button type="submit">SIGN UP</button>
+        <Button type="submit">SIGN UP</Button>
       </form>
     </div>
   );
