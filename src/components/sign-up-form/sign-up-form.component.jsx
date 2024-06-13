@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useState } from "react";
 
 import {
   createAuthUserWithEmailAndPassword,
@@ -9,7 +9,6 @@ import "./sign-up-form.styles.scss";
 
 import FormInput from "../form-input/form-input.component.jsx";
 import Button from "../button/button.component.jsx";
-import { UserContext } from "../../contexts/user.context.jsx";
 
 const defaultFormFields = {
   displayName: "",
