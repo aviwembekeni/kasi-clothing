@@ -1,4 +1,7 @@
 {
   "editor.fontFamily": "Merienda",
-  "editor.codeLensFontFamily": "Merienda"
+  "editor.codeLensFontFamily": "Merienda",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true
 }
