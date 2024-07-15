@@ -5,7 +5,7 @@ import {
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils.js";
 
-import "./sign-up-form.styles.scss";
+import { SignUpContainer } from "./sign-up-form.styles";
 
 import FormInput from "../form-input/form-input.component.jsx";
 import Button from "../button/button.component.jsx";
@@ -44,7 +44,6 @@ const SignUpForm = () => {
         password
       );
 
-
       await createUserDocumentFromAuth(user, { displayName });
       resetFormFields();
     } catch (error) {
@@ -57,7 +56,7 @@ const SignUpForm = () => {
   };
 
   return (
-    <div className="sign-up-container">
+    <SignUpContainer>
       <h2>I do not have an account</h2>
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
@@ -95,7 +94,7 @@ const SignUpForm = () => {
         />
         <Button type="submit">SIGN UP</Button>
       </form>
-    </div>
+    </SignUpContainer>
   );
 };
 
