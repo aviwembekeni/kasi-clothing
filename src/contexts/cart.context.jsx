@@ -49,6 +49,20 @@ export const CartContext = createContext({
     cartTotal: 0,
 });
 
+const INITIAL_STATE = {
+  isCartOpen: false,
+  cartItems: [],
+  cartCount: 0,
+  cartTotal: 0,
+};
+
+
+//N.B Reducer should not handle any business logic. Reducer shouldonly worry about updating the state.
+const cartReducer = (state, action) => {
+  const { state, payload } = action;
+
+  // your payload should be already be what you need to update inside the reducer function
+ }
 export  const CartProvider = ({children}) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [cartItems,  setCartItems] = useState([]);
@@ -64,20 +78,37 @@ export  const CartProvider = ({children}) => {
       const newCartTotal =  cartItems.reduce((total, cartItem) => total + cartItem.quantity * cartItem.price,0);
       setCartTotal(newCartTotal)
     }, [cartItems]);
-    
+
+    const updateCartItemsReducer = (newCartItems) => {  
+      /*
+      generate newCartTotal
+
+      generate newCartCount
+
+      dispatch new actioin with payload = {
+      newCartItems,
+      newCartCount,
+      newCartTotal
+      }
+      
+      
+      
+      */
+      
+    }
 
     const addItemToCart = (productToAdd) => {
-        setCartItems(addCartItem(cartItems, productToAdd))
+      const  newCartItems = (addCartItem(cartItems, productToAdd))
 
     }
 
     const removeItemFromCart = (cartItemToRemove) => {
-      setCartItems(removeCartItem(cartItems, cartItemToRemove))
+    const  newCartItems = (removeCartItem(cartItems, cartItemToRemove))
 
     }
 
     const clearItemFromCart = (cartItemToClear) => {
-      setCartItems(clearCartItem(cartItems, cartItemToClear))
+    const  newCartItems = (clearCartItem(cartItems, cartItemToClear))
 
     }
 
